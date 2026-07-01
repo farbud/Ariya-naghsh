@@ -6,7 +6,7 @@ export default function CTA() {
   return (
     <section className="relative py-28 overflow-hidden">
       {/* Background Glow */}
-      <div className="absolute inset-0 -z-10 bg-linear-to-r from-blue-600/20 via-cyan-500/10 to-blue-600/20 blur-3xl" />
+      {/* <div className="absolute inset-0 -z-10 bg-linear-to-r from-blue-600/20 via-cyan-500/10 to-blue-600/20 blur-3xl" /> */}
 
       <div className="mx-auto max-w-4xl px-6 text-center">
         <motion.h2
@@ -24,7 +24,7 @@ export default function CTA() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="mt-6 text-gray-300 text-lg"
+          className="mt-6 text-gray-800 text-lg"
         >
           آریا نقش کنار شماست تا ایده‌هات رو به یک محصول واقعی و ماندگار تبدیل
           کنه

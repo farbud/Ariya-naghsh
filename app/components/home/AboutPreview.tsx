@@ -15,13 +15,13 @@ export default function AboutPreview() {
         >
           <h2 className="text-4xl font-bold leading-tight">چرا آریا نقش؟</h2>
 
-          <p className="mt-6 text-gray-400 leading-relaxed">
+          <p className="mt-6 text-gray-800 leading-relaxed">
             آریا نقش با بیش از دو دهه تجربه در صنعت چاپ و بسته‌بندی، همواره تلاش
             کرده ترکیبی از کیفیت، دقت و خلاقیت را ارائه دهد. هدف ما تبدیل
             ایده‌های شما به محصولی ماندگار و حرفه‌ای است.
           </p>
 
-          <ul className="mt-8 space-y-4 text-gray-300">
+          <ul className="mt-8 space-y-4 text-gray-800">
             <li>✔ استفاده از دستگاه‌های مدرن چاپ</li>
             <li>✔ تیم طراحی حرفه‌ای</li>
             <li>✔ تحویل سریع و دقیق</li>
@@ -42,11 +42,13 @@ export default function AboutPreview() {
           className="relative"
         >
           <div className="h-100 w-full rounded-3xl bg-linear-to-tr from-blue-500/20 to-cyan-500/10 blur-[0.5px] border border-white/10 flex items-center justify-center text-gray-400">
-            تصویر چاپخانه / دستگاه چاپ
+            <video>
+              <source src="/videos/hero.mp4" type="video/mp4" />
+            </video>
           </div>
 
           {/* Glow Effect */}
-          <div className="absolute -inset-4 -z-10 rounded-3xl bg-blue-500/10 blur-2xl" />
+          {/* <div className="absolute -inset-4 -z-10 rounded-3xl bg-blue-500/10 blur-2xl" /> */}
         </motion.div>
       </div>
     </section>

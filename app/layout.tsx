@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="fa" dir="rtl">
       <body className="font-sans antialiased">
         <Header />
-        {children}
+        <main className="pt-20">{children}</main>
       </body>
     </html>
   );
