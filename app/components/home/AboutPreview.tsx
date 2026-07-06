@@ -13,7 +13,9 @@ export default function AboutPreview() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl font-bold leading-tight">چرا آریا نقش؟</h2>
+          <h2 className="text-4xl text-black font-bold leading-tight font-title farsi-title">
+            چرا آریا نقش؟
+          </h2>
 
           <p className="mt-6 text-gray-800 leading-relaxed">
             آریا نقش با بیش از دو دهه تجربه در صنعت چاپ و بسته‌بندی، همواره تلاش
@@ -41,7 +43,7 @@ export default function AboutPreview() {
           viewport={{ once: true }}
           className="relative"
         >
-          <div className="h-100 w-full rounded-3xl bg-linear-to-tr from-blue-500/20 to-cyan-500/10 blur-[0.5px] border border-white/10 flex items-center justify-center text-gray-400">
+          <div className="h-100 w-full rounded-3xl bg-linear-to-tr  flex items-center justify-center ">
             <video>
               <source src="/videos/hero.mp4" type="video/mp4" />
             </video>

@@ -10,12 +10,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="fa" dir="rtl">
-      <body className="font-sans antialiased">
+      <body className="antialiased font-fa bg-[#e0e3ee] text-black">
         <Header />
         <main className="pt-20">{children}</main>
       </body>

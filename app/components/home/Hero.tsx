@@ -1,17 +1,47 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+
+const TEXT = "کاغذ ساده را به هویت برند شما تبدیل می‌کنیم.";
 
 export default function Hero() {
+  const [typed, setTyped] = useState("");
+  const [mouse, setMouse] = useState({ x: 0, y: 0 });
+
+  // ⌨️ Typewriter
+  useEffect(() => {
+    let i = 0;
+
+    const interval = setInterval(() => {
+      setTyped(TEXT.slice(0, i));
+      i++;
+      if (i > TEXT.length) clearInterval(interval);
+    }, 70);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // 🖱️ Mouse tracking light
+  useEffect(() => {
+    const move = (e: MouseEvent) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 2;
+      const y = (e.clientY / window.innerHeight - 0.5) * 2;
+      setMouse({ x, y });
+    };
+
+    window.addEventListener("mousemove", move);
+    return () => window.removeEventListener("mousemove", move);
+  }, []);
+
   return (
-    <section className="relative  -mt-10 flex min-h-screen items-center w-full justify-center overflow-hidden">
-      {/* Background Video */}
+    <section className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-[#05060a] text-white">
       <video
         autoPlay
         muted
         loop
         playsInline
-        className="absolute inset-0 h-full w-full object-cover scale-125 blur-50"
+        className="absolute inset-0 h-full w-full scale-125 object-cover blur-[2px]"
       >
         <source src="/videos/hero.mp4" type="video/mp4" />
       </video>
@@ -24,43 +54,61 @@ export default function Hero() {
             radial-gradient(
               circle at center,
               rgba(131, 129, 129, 0.112) 0%,
-              rgba(68, 66, 66, 0.65) 40%,
-              rgba(57, 57, 57, 0.376)) 70%,
-              rgba(8, 8, 8, 0.696) 100%
+              rgba(205, 200, 200, 0.65) 20%,
+              rgba(87, 87, 87, 0.376)) 30%,
+              rgba(173, 173, 173, 0.696) 10%
             )
           `,
         }}
       />
 
+      {/* 🌌 Dynamic Glow */}
+      <div
+        className="absolute h-150 w-150 rounded-full bg-blue-500/20 blur-[180px]"
+        style={{
+          transform: `translate(${mouse.x * 50}px, ${mouse.y * 50}px)`,
+          transition: "0.2s ease-out",
+        }}
+      />
+
+      <div
+        className="absolute -bottom-50 -right-50 h-125 w-125 rounded-full bg-cyan-400/10 blur-[200px]"
+        style={{
+          transform: `translate(${-mouse.x * 40}px, ${-mouse.y * 40}px)`,
+          transition: "0.2s ease-out",
+        }}
+      />
+
+      {/* 🌟 Soft Center Light */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.08),transparent_60%)]" />
+
       {/* Content */}
-      <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center px-6 text-center">
+      <div className="relative z-10 text-center px-6 mb-20">
+        {/* 🧊 3D Title */}
         <motion.h1
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-5xl text-5xl font-extrabold leading-tight text-slate-800 md:text-7xl"
+          initial={{ opacity: 0, y: 40, rotateX: 20 }}
+          animate={{ opacity: 1, y: 0, rotateX: 0 }}
+          transition={{ duration: 1 }}
+          className="text-3xl md:text-5xl lg:text-6xl font-black leading-tight"
+          style={{
+            transform: "perspective(900px)",
+            textShadow: `
+              0 2px 0 #0f172a,
+              0 10px 40px rgba(0,0,0,0.6)
+            `,
+          }}
         >
-          چاپ و بسته‌بندی حرفه‌ای
-          <span className="mt-4 block text-blue-600">
+          {/* ⌨️ Typewriter */}
+          <span className="relative inline-block text-red-600">
+            {typed}
+            <span className="animate-pulse text-blue-400">|</span>
+          </span>
+
+          {/* ✨ Subtitle Gradient */}
+          <span className="block mt-6 text-transparent bg-linear-to-r from-blue-400 via-cyan-300 to-white bg-clip-text">
             برای برندهایی که دیده می‌شوند
           </span>
         </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-          className="mt-8  max-w-3xl text-lg leading-9 text-slate-700 md:text-xl"
-        >
-          کاغذ ساده را به هویت برند شما تبدیل می‌کنیم.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="mt-12 flex flex-col gap-4 sm:flex-row"
-        ></motion.div>
       </div>
     </section>
   );

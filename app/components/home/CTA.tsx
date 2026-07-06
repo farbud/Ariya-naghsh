@@ -14,7 +14,7 @@ export default function CTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-bold"
+          className="text-4xl text-gray-800 md:text-5xl font-bold font-title farsi-title"
         >
           آماده شروع یک پروژه حرفه‌ای هستید؟
         </motion.h2>
@@ -37,11 +37,11 @@ export default function CTA() {
           transition={{ delay: 0.3 }}
           className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <button className="rounded-xl bg-blue-500 px-8 py-4 font-semibold text-white hover:bg-blue-600 transition">
+          <button className="rounded-xl px-8 py-4  bg-blue-500 font-semibold text-white hover:bg-blue-600 transition">
             تماس با ما
           </button>
 
-          <button className="rounded-xl border border-white/20 px-8 py-4 font-semibold hover:border-white/50 transition">
+          <button className="rounded-xl border  bg-blue-500 border-white/20 px-8 py-4 font-semibold hover:border-white/50 transition">
             مشاهده نمونه‌کارها
           </button>
         </motion.div>

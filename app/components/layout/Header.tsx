@@ -25,13 +25,6 @@ export default function Header() {
           </Link>
 
           <Link
-            href="/services"
-            className="text-gray-300 hover:text-blue-400 transition"
-          >
-            خدمات
-          </Link>
-
-          <Link
             href="/portfolio"
             className="text-gray-300 hover:text-blue-400 transition"
           >
@@ -74,14 +67,6 @@ export default function Header() {
               className="text-white"
             >
               خانه
-            </Link>
-
-            <Link
-              href="/services"
-              onClick={() => setOpen(false)}
-              className="text-white"
-            >
-              خدمات
             </Link>
 
             <Link
