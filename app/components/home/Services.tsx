@@ -33,13 +33,13 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="py-24">
+    <section className="py-10">
       <div className="mx-auto max-w-7xl px-6">
         <h2 className="mb-4 text-center text-4xl font-bold text-slate-800 font-title farsi-title">
           خدمات آریا نقش
         </h2>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 mb-10">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 mb-5">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -57,7 +57,7 @@ export default function Services() {
               className="overflow-hidden bg-blue-950 shadow-lg transition"
             >
               {/* Image */}
-              <div className="relative h-56 w-full overflow-hidden">
+              <div className="relative h-50 w-full overflow-hidden">
                 <Image
                   src={service.image}
                   alt={service.title}
@@ -67,16 +67,16 @@ export default function Services() {
               </div>
 
               {/* Content */}
-              <div className="p-6">
+              <div className="p-5">
                 <h3 className="text-2xl font-bold text-red-400">
                   {service.title}
                 </h3>
 
-                <p className="mt-3 leading-8 text-white">
+                <p className="mt-1 leading-8 text-white">
                   {service.description}
                 </p>
                 <Link href={`/services/${service.slug}`}>
-                  <button className="mt-6 rounded-xl bg-blue-600 px-5 py-3 font-semibold text-white transition hover:bg-blue-700">
+                  <button className="mt-4 rounded-xl bg-blue-600 px-5 py-3 font-semibold text-white transition hover:bg-blue-700">
                     اطلاعات بیشتر
                   </button>
                 </Link>

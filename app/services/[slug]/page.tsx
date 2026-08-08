@@ -55,10 +55,10 @@ export default function ServicePage({ params }: Props) {
   }
 
   return (
-    <section className="max-w-5xl mx-auto px-6 py-20">
-      <h1 className="text-4xl font-bold mb-6">{service.title}</h1>
+    <section className="max-w-5xl mx-auto px-4 py-10">
+      <h1 className="text-4xl font-bold mb-4">{service.title}</h1>
 
-      <div className="relative h-80 w-full mb-8">
+      <div className="relative h-20 w-full mb-8">
         <Image
           src={service.image}
           alt={service.title}

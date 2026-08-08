@@ -1,12 +1,17 @@
 import type { Metadata } from "next";
 import "./globals.css";
-
+import { Vazirmatn } from "next/font/google";
 import Header from "@/app/components/layout/Header";
 
 export const metadata: Metadata = {
   title: "آریا نقش",
   description: "چاپ و بسته‌بندی حرفه‌ای",
 };
+
+const vazir = Vazirmatn({
+  subsets: ["arabic"],
+  variable: "--font-vazir",
+});
 
 export default function RootLayout({
   children,
@@ -15,9 +20,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fa" dir="rtl">
-      <body className="antialiased font-fa bg-[#e0e3ee] text-black">
+      <body
+        className={`antialiased bg-[#e0e3ee] text-black vazir.variable font-fa`}
+      >
         <Header />
-        <main className="pt-20">{children}</main>
+        <main>{children}</main>
       </body>
     </html>
   );

@@ -8,11 +8,12 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 z-50 h-20 w-full bg-[#0F172A]/70 backdrop-blur-md">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+    <header className="sticky top-0 z-50 h-15 w-full bg-[#0F172A]/70 backdrop-blur-md">
+      <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-4 ">
         {/* Logo */}
-        <Link href="/" className="text-2xl font-bold text-white">
-          آریا نقش
+        <Link href="/" className="text-2xl font-bold ">
+          <span className="text-blue-900 text-2xl">آریا</span>{" "}
+          <span className="text-red-800 text-sm "> نقش </span>
         </Link>
 
         {/* Desktop Menu */}
